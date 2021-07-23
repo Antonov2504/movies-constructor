@@ -48,9 +48,9 @@ const createNav = (params) => {
 		const navItem = getElement('li', 'nav__item');
 		const navLink = getElement('a', 'nav__link', {
 			href: item.link,
-			target: '_blank'
+			target: '_blank',
+			textContent: item.content,
 		});
-		navLink.textContent = item.content;
 		navItem.append(navLink);
 		return navItem;
 	});
@@ -93,11 +93,11 @@ const createHeader = (params) => {
 }
 
 const movieConstructor = (selector, options) => {
+	const app = document.querySelector(selector);
+	app.classList.add('body-app');
 	if (options.title) {
 		document.title = options.title;
 	}
-	const app = document.querySelector(selector);
-	app.classList.add('body-app');
 	if (options.header) {
 		app.append(createHeader(options.header));
 	}
