@@ -19,53 +19,97 @@ img {
     background-position: top right 20%;
 }
 
+/* 
 .container {
     width: 95%;
     max-width: 1140px;
     margin: auto;
-
-}
+} 
+*/
 
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 60px;
-    margin-bottom: 90px;
+    width: 100%;
+    max-width: 1140px;
+    min-height: 150px;
+    margin: 0 auto;
     z-index: 99;
 }
 
-.logo {
+.header__logo {
     height: 37px;
 }
 
-.menu-list {
-    margin-right: auto;
-    margin-left: 67px;
+.nav {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: inherit;
+    position: relative;
+  }
+
+.nav__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* margin: 0; */
+    margin: 0 auto 0 67px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.14;
+    color: inherit;
+    list-style: none;
 }
 
-.menu-link {
-    font-size: 14px;
-    line-height: 16px;
+.nav__item {
+  margin: 0 24px 0 0;
+}
+
+.nav__link {
     color: inherit;
     text-decoration: none;
-    margin-right: 24px;
+    opacity: 1;
+    transition: opacity .3s ease-in;
+}
+
+.nav__link:hover {
+    opacity: .7;
 }
 
 .social {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 0 20px;
+    padding: 0;
+    list-style: none;
 }
 
-.social-link {
-    display: block;
+.social__item {
+    margin: 0 20px 0 0;
+}
+
+.social__link {
+    display: inline-block;
     max-width: 18px;
     text-decoration: none;
+    opacity: 1;
+    transition: opacity .3s;
 }
 
-.social-link img {
+.social__link:hover {
+    opacity: .7;
+}
+
+.social__icon {
     display: block;
     width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .genre {
@@ -352,12 +396,12 @@ img {
         display: flex;
     }
 
-    .logo {
+    .header__logo {
         margin-bottom: 25px;
 
     }
 
-    .menu-list {
+    .nav__list {
         margin: auto;
         order: 2;
         display: flex;
@@ -365,18 +409,17 @@ img {
         align-items: center;
     }
 
-    .menu-link {
-        margin-right: 0;
-        margin-bottom: 17px;
+    .nav__item {
+        margin: 0 0 17px;
     }
 
     .social {
         order: 1;
-        margin-bottom: 22px;
+        margin: 0 0 22px;
     }
 
-    .social-link:first-child {
-        margin-left: 0;
+    .social__link:first-child {
+        margin: 0 20px 0 0;
     }
 
     .swiper-container {
